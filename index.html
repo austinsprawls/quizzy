@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="http://underscorejs.org/underscore-min.js"></script>
+		<script src="main.js"></script>
+	</head>
+	<body>
+    <div class="row">
+      <div class="col-md-6 nietzsche"><img src="img/niet.jpg"></div>
+      <div class="col-md-6 jaden"><img src="img/jaden.jpg"></div>
+    </div>
+    <div class="container">
+		<div class="panel panel-default" id="quiz-app"></div>
+		<script type="text/template" id="template-question">
+			<div id="question">
+				<h2><em><%= question %></em></h2>
+        <% for (var i in choices) { %>
+					<input type="radio" name="<%= name %>" value="<%= choices[i] %>"><%= choices[i] %>
+				<% } %>
+				<input type="submit" class="submit">
+			</div>
+		</script>
+		<script>
+			var myFancyQuizData = {
+				quizTitle: "Who Said It? Jaden Smith V Nietzsche",
+				questions: [
+					{
+						question: "Without music, life would be a mistake.",
+						answer: "Nietzsche",
+            name: "first",
+            choices: ["Jaden Smith", "Nietzsche"]
+					},
+          {
+            question: "I scare people away",
+            answer: "Jaden Smith",
+            name: "second",
+            choices: ["Jaden Smith", "Nietzsche"]
+          },
+          {
+            question: "People tell me to smile. I tell them the lack of emotion in my face doesn't mean I'm unhappy.",
+            answer: "Jaden Smith",
+            name: "third",
+            choices: ["Jaden Smith", "Nietzsche"]
+          },
+					{
+						question: "Thoughts are the shadows of our feelings - always darker, emptier and simpler.",
+						answer: "Nietzsche",
+            name: "fourth",
+            choices: ["Jaden Smith", "Nietzsche"]
+					},
+					{
+						question: "When you look into an abyss, the abyss also looks into you",
+						answer: "Nietzsche",
+            name: "fifth",
+            choices: ["Jaden Smith", "Nietzsche"]
+					},
+          {
+            question: "There are no facts, only interpretations",
+            answer: "Nietzsche",
+            name: "sixth",
+            choices: ["Jaden Smith", "Nietzsche"]
+          },
+          {
+            question: "Unawareness is the only sin, and if you were aware you would know.",
+            answer: "Jaden Smith",
+            name: "seventh",
+            choices: ["Jaden Smith", "Nietzsche"]
+          },
+          {
+            question: "Morality is the herd-instinct in the individual",
+            answer: "Nietzsche",
+            name: "eigth",
+            choices: ["Jaden Smith", "Nietzsche"]
+          },
+          {
+            question: "When you live your whole life in a prison freedom can be so dull.",
+            answer: "Jaden Smith",
+            name: "ninth",
+            choices: ["Jaden Smith", "Nietzsche"]
+          },
+          {
+            question: "The moment that truth is organized it becomes a lie.",
+            answer: "Jaden Smith",
+            name: "tenth",
+            choices: ["Jaden Smith", "Nietzsche"]
+          }
+				]
+			};
+
+			Quizzy.start('#quiz-app', myFancyQuizData);
+		</script>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </div>
+	</body>
+</html>
