@@ -21,12 +21,17 @@
 		<script src="main.js"></script>
 	</head>
 	<body>
+    <div class="container">
+    <h2>Who Said It? Jaden Smith V Nietzsche</h2>
+  </div>
     <div class="row">
       <div class="col-md-6 nietzsche"><img src="img/niet.jpg"></div>
       <div class="col-md-6 jaden"><img src="img/jaden.jpg"></div>
     </div>
     <div class="container">
-		<div class="panel panel-default" id="quiz-app"></div>
+    <input type="text" placeholder="enter your name" class="username">
+    <input type="submit" class="name">
+    <div class="panel panel-default" id="quiz-app"></div>
 		<script type="text/template" id="template-question">
 			<div id="question">
 				<h2><em><%= question %></em></h2>
@@ -38,7 +43,6 @@
 		</script>
 		<script>
 			var myFancyQuizData = {
-				quizTitle: "Who Said It? Jaden Smith V Nietzsche",
 				questions: [
 					{
 						question: "Without music, life would be a mistake.",
@@ -103,7 +107,14 @@
 				]
 			};
 
-			Quizzy.start('#quiz-app', myFancyQuizData);
+      $('.name').on('click', function(){
+        var username = $('.username').val();
+        Quizzy.controller.addUsername(username);
+        $('.username').hide();
+        $('.name').hide();
+        Quizzy.start('#quiz-app', myFancyQuizData);
+      });
+
 		</script>
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
